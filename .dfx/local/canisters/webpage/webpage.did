@@ -1,2 +1,23 @@
+type HttpResponse = 
+ record {
+   body: blob;
+   headers: vec HeaderField;
+   status_code: nat16;
+ };
+type HttpRequest = 
+ record {
+   body: blob;
+   headers: vec HeaderField;
+   method: text;
+   url: text;
+ };
+type HeaderField = 
+ record {
+   text;
+   text;
+ };
 service : {
+  change_page_text: (text) -> ();
+  http_request: (HttpRequest) -> (HttpResponse) query;
+  test_text: () -> (text) query;
 }
