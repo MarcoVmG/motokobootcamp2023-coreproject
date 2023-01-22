@@ -1,0 +1,22 @@
+type Votes = 
+ record {
+   votes_false: nat;
+   votes_true: nat;
+ };
+type Proposal = 
+ record {
+   proposalText: text;
+   proposalVotes: Votes;
+   userPrincipal: principal;
+ };
+service : {
+  delete_proposal: (nat) -> (text);
+  get_all_proposals: () -> (vec record {
+                                  nat;
+                                  Proposal;
+                                }) query;
+  get_proposal: (nat) -> (opt Proposal) query;
+  submit_proposal: (Proposal) -> ();
+  test_update: () -> (text) query;
+  vote: (nat, bool, principal) -> (text);
+}

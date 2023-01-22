@@ -151,12 +151,14 @@ actor {
 
     private func change_webpage ( webpage_text : Text) : async(){
     
-        let receiver : actor {change_page_text : (page_text : Text) ->  async ()} = actor "r7inp-6aaaa-aaaaa-aaabq-cai";
+        let receiver : actor {change_page_text : (page_text : Text) ->  async ()} = actor "5o3md-fiaaa-aaaan-qc25a-cai";
 
         let response =  await receiver.change_page_text( webpage_text);
         return ();
 
     };
+
+
 
     
 }
