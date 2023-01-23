@@ -8,7 +8,7 @@ export interface Proposal {
 }
 export interface Votes { 'votes_true' : bigint, 'votes_false' : bigint }
 export interface _SERVICE {
-  'delete_proposal' : ActorMethod<[bigint], string>,
+  'delete_proposal' : ActorMethod<[bigint], undefined>,
   'get_all_proposals' : ActorMethod<[], Array<[bigint, Proposal]>>,
   'get_proposal' : ActorMethod<[bigint], [] | [Proposal]>,
   'submit_proposal' : ActorMethod<[Proposal], undefined>,

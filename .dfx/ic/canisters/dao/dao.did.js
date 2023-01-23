@@ -6,7 +6,7 @@ export const idlFactory = ({ IDL }) => {
     'proposalVotes' : Votes,
   });
   return IDL.Service({
-    'delete_proposal' : IDL.Func([IDL.Nat], [IDL.Text], []),
+    'delete_proposal' : IDL.Func([IDL.Nat], [], ['oneway']),
     'get_all_proposals' : IDL.Func(
         [],
         [IDL.Vec(IDL.Tuple(IDL.Nat, Proposal))],

@@ -17,6 +17,5 @@ service : {
                                 }) query;
   get_proposal: (nat) -> (opt Proposal) query;
   submit_proposal: (Proposal) -> ();
-  test_update: () -> (text) query;
   vote: (nat, bool, principal) -> (text);
 }

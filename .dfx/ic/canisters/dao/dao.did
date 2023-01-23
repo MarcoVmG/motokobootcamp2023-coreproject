@@ -10,7 +10,7 @@ type Proposal =
    userPrincipal: principal;
  };
 service : {
-  delete_proposal: (nat) -> (text);
+  delete_proposal: (nat) -> () oneway;
   get_all_proposals: () -> (vec record {
                                   nat;
                                   Proposal;
